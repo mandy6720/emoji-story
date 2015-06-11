@@ -2,13 +2,37 @@
 
 $(document).on("ready", function(){
 
-	var emojiBank = [ "128023",
-		"128704",
-		"127997",
-		"128014",
-		"127755",
-		"128059"]
 
+		var startTime = new Date().valueOf()
+
+		var count = 25
+
+		var timer = setInterval(function(){
+		console.log(new Date().valueOf())
+			count -= .1
+
+			$(".timer").text(Math.round(count))
+			
+			if (((new Date().valueOf() - 125000) > startTime)&&(count < .1)) {
+				clearInterval(timer)
+				alert("fuck you")
+			}
+
+			if (count < .1) {
+				//send text to finished story box
+				//empty textarea
+				//bring a new emoji
+				//enable textarea
+				console.log("loop")
+				count = 25
+			}
+
+		}, 100)
+
+
+
+
+/*
 	var timer = 25
 		setTimeout(setInterval(function(){
 			timer -= 1
@@ -17,6 +41,16 @@ $(document).on("ready", function(){
 		}, 1000), 25000)
 
 	console.log(timer)
+
+
+	var resetClock = setInterval(function (){
+		var emojiSelector = Math.floor(Math.random()*6)
+
+		$(".emoji-display").text(emojiBank[emojiSelector])	
+
+		//remove stuff function
+	}, 25000)
+
 
 	var timerInit = $("#start").on("click", function() {
 		$("#story").removeAttr("disabled")
@@ -39,7 +73,7 @@ $(document).on("ready", function(){
 		$("#story").text("")
 	})
 
-
+*/
 
 })
 
