@@ -32,9 +32,9 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
-  }
+  '/': "HomeController.landing",
+  "/write": "HomeController.write",
+  "/read": "HomeController.read"
 
   /***************************************************************************
   *                                                                          *
