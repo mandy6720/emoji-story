@@ -1,0 +1,109 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-image: url("http://www.camomienoteca.com/wp/wp-content/uploads/2014/10/Chalkboard-Darker-low-res.jpg");
+}
+a {
+	text-decoration: none;
+	color: #eee;
+}
+.container {
+	width: 90%;
+	margin: 0px auto;
+	font-family: 'Schoolbell', cursive;
+	color: #eee;
+}
+h1, h2, h3 {
+	font-family: 'Cabin Sketch', cursive;
+	text-align: center;
+	margin-bottom: 10px
+}
+h2 {
+	font-size: 48px;
+}
+h3 {
+	font-size: 30px;
+}
+#title {
+	margin-top: 35px;
+	font-size: 80px;
+}
+.instructions {
+	display: inline-block;
+	float: left;
+	max-width: 40%;
+	max-height: 60vh;
+	margin: 20px 5%;
+}
+.button {
+	padding: 15px;
+	border: 2px solid #EEE;
+	display: inline-block;
+	}
+
+/* ------- Writing Page ---------- */
+.written, .right {
+	display: inline-block;
+	width: 50%;
+	padding: 0px 20px;
+	position: relative;
+}
+.written {
+ 	float: left;
+}
+.right {
+	float: right;
+}
+.current-emoji, .timer {
+	width: 50%;
+	display: inline-block;
+	float: left;
+	background-color: #fff
+	text-align: center;
+	height: 20vh;
+	margin: opx auto;
+}
+textarea {
+	width: 90%;
+	height: 50vh;
+	color: #eee;
+	background-color: rgba(0,0,0,.7);
+	margin-top: 10px;
+	font-family: 'Schoolbell', cursive;
+	padding: 5px;
+}
+.currently-writing {
+	text-align: center;
+}
+
+/* -------- Read Page ------------ */
+
+.emoji-set {
+	display: inline-block;
+	float: left;
+	width: 20%;
+}
+#emoji1, #emoji2, #emoji3, #emoji4, #emoji5 {
+	height: 60px;
+	width: 60px;
+	margin: 15px auto;
+}
+.finished {
+	width: 60%;
+	display: inline-block;
+	float: left;
+}
+.right-side {
+	display: inline-block;
+	width: 18%%;
+	float: right;
+	text-align: center;
+}
+.right-side .button{
+	display: block;
+	margin: 20px 0px;
+}
+
