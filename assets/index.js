@@ -1,18 +1,20 @@
+var emoji
+
 $(document).on("ready", function() {
     
     // Get an array of five random emoji from server
 	var getRandomEmoji = function() {
-		$.ajax{(
-		  url: ?,
+		$.ajax({
+		  url: "/api/getEmoji",
 	      method: "GET",
 	      success: randoEmoji
-	  	)}
+	  	})
 	}
 
 	// Send emoji AND text to server
 	var postContent = function(emoji, text){
-		$.ajax{(
-		  url: ?,
+		$.ajax({
+		  url: "/api/saveStory",
 		  method: "POST",
 		  data: {
 		  	emoji: emoji,
@@ -22,15 +24,26 @@ $(document).on("ready", function() {
 		  	var postInfo = $("#written").val().append(data.text)
 		
 		  }
-		)}
+		})
 	}
 
    var randoEmoji =  function(data) {
-      _.sample(function(data)
-      	 $(".class").append(randoEmoji)
+     	emoji = data.emoji
+		$(".current-emoji").text(emoji[0])
+     }
 
-    }
-   
+//Where we left off today! 
+	
+
+	//console.log(getRandomEmoji())
+
+	//console.log(getRandomEmoji[0])
+	getRandomEmoji()
+
+
+
+ 	
+})
   
   	
 
@@ -41,5 +54,3 @@ $(document).on("ready", function() {
 
 
 
-
-})
