@@ -8,22 +8,24 @@ $(document).on("ready", function(){
 		var count = 25
 
 		var timer = setInterval(function(){
-		console.log(new Date().valueOf())
+
 			count -= .1
 
 			$(".timer").text(Math.round(count))
 			
 			if (((new Date().valueOf() - 125000) > startTime)&&(count < .1)) {
 				clearInterval(timer)
-				alert("fuck you")
+				alert("Time's Up!")
 			}
+
+			//TO MAKE A SINGLE LOOP: delete following if statement,
+				// and change in above, 125000 to 25000
 
 			if (count < .1) {
 				//send text to finished story box
 				//empty textarea
 				//bring a new emoji
 				//enable textarea
-				console.log("loop")
 				count = 25
 			}
 
