@@ -8,7 +8,7 @@ $(document).on("ready", function() {
 	      method: "GET",
 	      success: function (data) {
 	      	console.log(data)
-	 		emoji = data.emoji
+	 				emoji = data.emoji
 	      }
 	  	})
 
@@ -33,13 +33,13 @@ $(document).on("ready", function() {
   	
 
     $("#start").on("click", function (){
-		$(".current-emoji").text(emoji[0])
+			$(".current-emoji").text(emoji[0])
 	    var startTime = new Date().valueOf()
 
-		var count = 25
-				var i = 0
-		var timer = 
-				setInterval(function(){
+			var count = 25
+			var i = 0
+			var timer = 
+			setInterval(function(){
 
 				count -= .1
 
@@ -73,6 +73,8 @@ $(document).on("ready", function() {
 
 
     })
+
+})
   	
 
   
