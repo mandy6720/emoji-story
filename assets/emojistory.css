@@ -37,12 +37,19 @@ h3 {
 	max-width: 40%;
 	max-height: 60vh;
 	margin: 20px 5%;
+	font-size: 20px;
 }
 .button {
+	position: absolute;
 	padding: 15px;
-	border: 2px solid #EEE;
 	display: inline-block;
+	font-size: 100px;
 	}
+
+ol {
+	text-align: center;
+	list-style-position: inside;
+}
 
 /* ------- Writing Page ---------- */
 .written, .right {
@@ -73,6 +80,7 @@ textarea {
 	background-color: rgba(0,0,0,.7);
 	margin-top: 10px;
 	font-family: 'Schoolbell', cursive;
+	font-size: 30px;
 	padding: 5px;
 }
 .currently-writing {
@@ -81,6 +89,26 @@ textarea {
 .button-container {
 	width: 100%;
 	text-align: center;
+}
+#start{
+	position: absolute;
+	border-radius: 100%;
+	height: 500px;
+	width: 500px;
+	z-index: 1;
+	margin-left: 23%;
+	margin-top: 3%;
+	font-size: 200px;
+	font-family: 'Cabin Sketch', cursive;
+	background-color: RGB(58, 140, 0);
+	border: RGB(58, 140, 0);
+	color: white;
+	opacity: 0.7;
+
+}
+
+#start.hidden {
+	display: none;
 }
 
 /* -------- Read Page ------------ */
