@@ -22,8 +22,7 @@ $(document).on("ready", function() {
 		  	text: text
 		  },
 		  success: function(data) {
-		  	var postInfo = $("#written").val().append(data.text)
-	
+		  	console.log(data)
 		  }
 		})
 	}
@@ -38,17 +37,12 @@ $(document).on("ready", function() {
 
 			var count = 25
 			var i = 0
-			var timer = 
-			setInterval(function(){
+			var timer = setInterval(function(){
 
 				count -= .1
 
 				$(".timer").text(Math.round(count))
 				
-				if (((new Date().valueOf() - 125000) > startTime)&&(count < .1)) {
-					clearInterval(timer)
-				}
-
 				//TO MAKE A SINGLE LOOP: delete following if statement,
 					// and change in above, 125000 to 25000
 
@@ -61,17 +55,15 @@ $(document).on("ready", function() {
 			    	i++
 		    		$(".current-emoji").text(emoji[i])
 
-
+		    	if (((new Date().valueOf() - 125000) > startTime)) {
+						clearInterval(timer)
+						postContent(emoji, $("#written").text())
+					}
 
 				}
 
 			}, 100)
 		
-
-
-
-
-
     })
 
 })
