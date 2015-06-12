@@ -3,13 +3,14 @@ var emoji
 $(document).on("ready", function() {
     
     // Get an array of five random emoji from server
-	var getRandomEmoji = function() {
 		$.ajax({
 		  url: "/api/getEmoji",
 	      method: "GET",
-	      success: randoEmoji
+	      success: function (data) {
+	      	console.log(data)
+	 		emoji = data.emoji
+	      }
 	  	})
-	}
 
 	// Send emoji AND text to server
 	var postContent = function(emoji, text){
@@ -22,29 +23,56 @@ $(document).on("ready", function() {
 		  },
 		  success: function(data) {
 		  	var postInfo = $("#written").val().append(data.text)
-		
+	
 		  }
 		})
 	}
 
    var randoEmoji =  function(data) {
-     	emoji = data.emoji
+    }
+  	
+
+    $("#start").on("click", function (){
 		$(".current-emoji").text(emoji[0])
-     }
+	    var startTime = new Date().valueOf()
 
-//Where we left off today! 
-	
+		var count = 25
+				var i = 0
+		var timer = 
+				setInterval(function(){
 
-	//console.log(getRandomEmoji())
+				count -= .1
 
-	//console.log(getRandomEmoji[0])
-	getRandomEmoji()
+				$(".timer").text(Math.round(count))
+				
+				if (((new Date().valueOf() - 125000) > startTime)&&(count < .1)) {
+					clearInterval(timer)
+				}
+
+				//TO MAKE A SINGLE LOOP: delete following if statement,
+					// and change in above, 125000 to 25000
+
+				if (count < .1) {
+
+					count = 25	    		
+					$("#written").append($(".current-emoji").text())
+		    		$("#written").append($("#writing").val())
+		    		$("#writing").val("")
+			    	i++
+		    		$(".current-emoji").text(emoji[i])
 
 
 
- 	
-})
-  
+				}
+
+			}, 100)
+		
+
+
+
+
+
+    })
   	
 
   
