@@ -32,6 +32,8 @@ $(document).on("ready", function() {
   	
 
     $("#start").on("click", function (){
+    		$(this).toggle("hidden")
+    		console.log("hello")
 			$(".current-emoji").text(emoji[0])
 	    var startTime = new Date().valueOf()
 
